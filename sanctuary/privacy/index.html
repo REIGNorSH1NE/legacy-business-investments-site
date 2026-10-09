@@ -74,7 +74,7 @@
   <p style="margin:0 0 1.5rem;font-size:.9rem"><a href="../../">&larr; Legacy Digital Labs</a> &middot; <a href="../">Sanctuary</a></p>
   <header>
     <h1>Privacy Policy — Sanctuary</h1>
-    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 7 October 2026</p>
+    <p class="dates"><strong>Effective date:</strong> 20 August 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> 8 October 2026</p>
     <p class="lede">Sanctuary is a private, on-device journaling app for Android. This policy explains what Sanctuary does and does not do with your information.</p>
     <div class="promise">The short version: <strong>your journal stays on your phone.</strong> Sanctuary has no servers, no account, and no ability to send your entries anywhere.</div>
   </header>
@@ -102,7 +102,7 @@
     <li><strong>Photos</strong> you attach to an entry are copied into the app&rsquo;s private storage and are not shared with other apps.</li>
     <li><strong>Settings</strong> (theme, font, app-lock configuration, and similar preferences) are stored locally.</li>
   </ul>
-  <p>When you delete an entry, it moves to Recently deleted, where it stays on your device for 30 days so you can restore it, and is then removed along with its photos. You can also remove it straight away from Recently deleted. All of this data is removed when you uninstall the app. Sanctuary sets <code>allowBackup=&quot;false&quot;</code>, so your encrypted journal is not included in Android&rsquo;s automatic cloud backup.</p>
+  <p>When you delete an entry, it moves to Recently deleted, where it stays on your device for 30 days so you can restore it, and is then removed along with its photos. You can also remove it straight away from Recently deleted. All of this data is removed when you uninstall the app. Sanctuary sets <code>allowBackup=&quot;false&quot;</code> and excludes all of its data from Android&rsquo;s backup rules, so your journal is not included in Android&rsquo;s automatic cloud backup and is not copied when you transfer to a new phone. To move your journal to a new phone, export a backup in the app and import it on the new phone (see &sect;8).</p>
 
   <hr>
 
@@ -117,7 +117,11 @@
         </tr>
         <tr>
           <td><strong>Biometric</strong> (<code>USE_BIOMETRIC</code>)</td>
-          <td>Optional app lock. If you enable it, your device&rsquo;s biometric/screen-lock is used to unlock the app. Sanctuary never sees or stores your fingerprint, face, or PIN — that is handled entirely by Android.</td>
+          <td>Optional app lock. If you enable it, your device&rsquo;s biometric/screen-lock is used to unlock the app. Sanctuary never sees or stores your fingerprint, face, or PIN — that is handled entirely by Android. While app lock is on, Sanctuary also blocks screenshots and screen recordings of the app and hides its preview in the recent-apps screen, so your entries can&rsquo;t be seen there without unlocking.</td>
+        </tr>
+        <tr>
+          <td><strong>Notifications</strong> (<code>POST_NOTIFICATIONS</code>)</td>
+          <td>Optional daily reminder to write. It is <strong>off unless you turn it on</strong>, and Sanctuary asks for this permission only when you do. The reminder is a notification created on your device at the time you choose; it is not sent from a server, and it <strong>never shows anything you have written</strong>.</td>
         </tr>
         <tr>
           <td><strong>Billing</strong> (<code>com.android.vending.BILLING</code>)</td>
@@ -126,7 +130,7 @@
       </tbody>
     </table>
   </div>
-  <p>You can use the core journaling experience without granting the microphone or biometric permissions.</p>
+  <p>You can use the core journaling experience without granting the microphone, biometric, or notification permissions.</p>
 
   <hr>
 
@@ -151,7 +155,7 @@
   <p>Because your data never leaves your device, you remain in full control:</p>
   <ul>
     <li>Delete individual entries at any time within the app. A deleted entry waits in Recently deleted for 30 days in case you change your mind, and you can remove it sooner from there.</li>
-    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere).</li>
+    <li>Export or back up your journal yourself using the app&rsquo;s backup/export features (these produce a file you choose where to save; the app does not upload it anywhere). This is also how you move your journal to a new phone: export it, then import the file on the new phone.</li>
     <li>Uninstalling the app removes its local data from your device.</li>
   </ul>
 
